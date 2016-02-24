@@ -1,6 +1,6 @@
 ### Ruby on Rails Project
 
-###Instructions
+###Instructions to run local
 - To run the application 
 - bundle install --without production
 - "rake db:clear" or /db/development.sqlite3
