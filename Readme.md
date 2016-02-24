@@ -1,13 +1,15 @@
-# Project 6
 ### Ruby on Rails Project
 
 ###Instructions
-- To run the application run 
+- To run the application 
 - bundle install --without production
 - "rake db:clear" or /db/development.sqlite3
 - "rake db:migrate"
 - "rake db:seed" or "rake db:setup"
 - "rails server"
+
+###Demo
+https://guarded-wildwood-9999.herokuapp.com/
 
 
 ###How GetThat  works
