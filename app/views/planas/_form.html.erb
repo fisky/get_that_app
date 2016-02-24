@@ -1,0 +1,29 @@
+<%= form_for(@plana) do |f| %>
+  <% if @plana.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@plana.errors.count, "error") %> prohibited this plana from being saved:</h2>
+
+      <ul>
+      <% @plana.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :week %><br>
+    <%= f.number_field :week %>
+  </div>
+  <div class="field">
+    <%= f.label :wkday %><br>
+    <%= f.number_field :wkday %>
+  </div>
+  <div class="field">
+    <%= f.label :exercise_id %><br>
+    <%= f.number_field :exercise_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

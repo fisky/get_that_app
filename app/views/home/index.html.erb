@@ -1,0 +1,26 @@
+<% if user_signed_in? %>
+  <% if current_user.admin?%>
+    <h1>Hi Administrator!</h1>
+    <h3 style=" text-align: center">How can I help you?</h3>
+    <div class="center">
+      <%= link_to "Edit Exercise", '/exercises', class: "btn btn-lg btn-default",style: "margin:60px 30px 50px 30px:" %><br>
+      <%= link_to "Edit PlanA", '/planas', class: "btn btn-lg btn-default",style: "margin:50px 30px 50px 30px" %>
+      <%= link_to "Edit PlanB", '/planbs', class: "btn btn-lg btn-default" ,style: "margin:50px 30px 50px 30px "%>
+      <%= link_to "Edit PlanC", '/plancs', class: "btn btn-lg btn-default" ,style: "margin:50px 30px 50px 30px"%>
+    </div>
+  <%else%>
+    <div class="center" >
+      <%= week_calendar  do |date| %>
+      <% end %>
+    </div>
+  <%end%>
+<% else %>
+  <div class="center" style="padding:10%">
+    <h1>Let's Get That</h1>
+    <h2>
+      A workout guide for starters at <em>HOME</em>
+    </h2>
+    <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-lg btn-default",style: "margin-right: 20%" %>
+    <%= link_to "Sign In", new_user_session_path, class: "btn btn-lg btn-default" ,style: "margin-left: 20%" %>
+  </div>
+<% end %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  week: 1
+  wkday: 1
+  exercise_id: 1
+
+two:
+  week: 1
+  wkday: 1
+  exercise_id: 1

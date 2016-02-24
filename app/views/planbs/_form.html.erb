@@ -1,0 +1,29 @@
+<%= form_for(@planb) do |f| %>
+  <% if @planb.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@planb.errors.count, "error") %> prohibited this planb from being saved:</h2>
+
+      <ul>
+      <% @planb.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :week %><br>
+    <%= f.number_field :week %>
+  </div>
+  <div class="field">
+    <%= f.label :wkday %><br>
+    <%= f.number_field :wkday %>
+  </div>
+  <div class="field">
+    <%= f.label :exercise_id %><br>
+    <%= f.number_field :exercise_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

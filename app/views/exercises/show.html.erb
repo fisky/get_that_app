@@ -1,0 +1,55 @@
+
+<!--<p>-->
+  <!--<strong>Name:</strong>-->
+  <!--<%#= @exercise.name %>-->
+<!--</p>-->
+
+<!--<p>-->
+  <!--<strong>Url:</strong>-->
+  <!--<%#= @exercise.url %>-->
+<!--</p>-->
+
+<!--<p>-->
+  <!--<strong>Description:</strong>-->
+  <!--<%#= @exercise.description %>-->
+<!--</p>-->
+
+<%#= link_to 'Edit', edit_exercise_path(@exercise) %>
+<!--<%#= link_to 'Back', exercises_path %>-->
+
+
+<h3 ><%=@exercise.name%></h3>
+
+
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th ><%=@exercise.name%></th>
+    <th >Hint</th>
+  </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><iframe width="420" height="315" src="https://www.youtube.com/embed/<%= @exercise.url %>" frameborder="0" allowfullscreen></iframe></td>
+      <td>
+	       <div id="description">
+	         <ul style="padding: 40px"><%  x = @exercise.description.split("-") %>
+	           <% x.each do |r| %>
+	             <li> <p><%=r %></p> </li>
+	           <%end %>
+            </ul>
+	       </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<%if current_user.admin?%>
+  <%= link_to "Back", exercises_path, class: "btn btn-lg btn-default" %><br>
+<%else%>
+  <%= link_to "Back", root_path, class: "btn btn-lg btn-default" %><br>
+<%end%>
+
+

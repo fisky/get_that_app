@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Week:</strong>
+  <%= @plana.week %>
+</p>
+
+<p>
+  <strong>Wkday:</strong>
+  <%= @plana.wkday %>
+</p>
+
+<p>
+  <strong>Exercise:</strong>
+  <%= @plana.exercise_id %>
+</p>
+
+<%= link_to 'Edit', edit_plana_path(@plana) ,class: "btn btn-lg btn-default" %> |
+<%= link_to 'Back', planas_path ,class: "btn btn-lg btn-default" %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Week:</strong>
+  <%= @planb.week %>
+</p>
+
+<p>
+  <strong>Wkday:</strong>
+  <%= @planb.wkday %>
+</p>
+
+<p>
+  <strong>Exercise:</strong>
+  <%= @planb.exercise_id %>
+</p>
+
+<%= link_to 'Edit', edit_planb_path(@planb),class: "btn btn-lg btn-default"  %> |
+<%= link_to 'Back', planbs_path ,class: "btn btn-lg btn-default" %>

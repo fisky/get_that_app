@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Plan B</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Week</th>
+      <th>Wkday</th>
+      <th>Exercise</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @planbs.each do |planb| %>
+      <tr>
+        <td><%= planb.week %></td>
+        <td><%= planb.wkday %></td>
+        <td><%= planb.exercise_id %></td>
+        <td><%= link_to 'Show', planb %></td>
+        <td><%= link_to 'Edit', edit_planb_path(planb) %></td>
+        <td><%= link_to 'Destroy', planb, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Planb', new_planb_path,class: "btn btn-lg btn-default"  %>
+<%= link_to "Back", root_url,class: "btn btn-lg btn-default"  %>

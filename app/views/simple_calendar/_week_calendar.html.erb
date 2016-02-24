@@ -1,0 +1,60 @@
+<div class="simple-calendar">
+	<% if @start_date-start_date>1%>
+    <h3> <span class="label label-default">No Plan This Week, Move Forward</span></h3>
+    <%= link_to "Quick link to My Plan",start_date: @start_date ,:class => 'btn btn-lg btn-default' %>
+	<%else%>
+    <% week_n= (start_date-@start_date).to_i/7+1 %>
+    <h1> <span class="label label-default">Week<%= week_n %></span></h1>
+  <%end%>
+
+  <ul class="pager">
+    <% if (start_date-@start_date)/7 >0 %>
+      <li class="previous"> <%= link_to "<",start_date: start_date - 7.day  %></li>
+    <%else%>
+      <li class="previous"> <%= link_to "<", "#"  %></li>
+    <%end%>
+    <% if (start_date-@start_date)/7 <3 %>
+      <li class="next"><%= link_to ">", start_date: start_date + 7.day  %></li>
+    <%else%>
+      <li class="next"><%= link_to ">", "#"  %></li>
+    <%end%>
+  </ul>
+
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <% date_range.slice(0, 7).each do |day| %>
+        <th><%= day.strftime("%a")+' '+ day.strftime("%x")%></th>
+      <% end %>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% date_range.each_slice(7) do |week| %>
+      <tr>
+        <% week.each do |day| %>
+          <%if day==Date.today%>
+            <td class="today">
+          <%else%>
+            <td class="calendar">
+          <%end%>
+          <% @plan.each do |plan|%>
+            <% if plan.week==week_n && plan.wkday==day.wday %>
+              <%tem=Exercise.find(plan.exercise_id) %>
+              <h7> <span><%= tem.name%></span></h7>
+              <br>
+              <%= link_to exercise_path(tem.id), class:"btn btn-danger btn-xs", style:"margin-right: 5px" do %>
+                <span class="glyphicon glyphicon-play" ></span>
+              <%end%>
+              <br>
+            <%end%>
+          <%end%>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+</div>
+

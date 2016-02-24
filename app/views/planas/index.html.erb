@@ -1,0 +1,27 @@
+<h1>Plan A</h1>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Week</th>
+      <th>Wkday</th>
+      <th>Exercise</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @planas.each do |plana| %>
+      <tr>
+        <td><%= plana.week %></td>
+        <td><%= plana.wkday %></td>
+        <td><%= plana.exercise_id %></td>
+        <td><%= link_to 'Show', plana %></td>
+        <td><%= link_to 'Edit', edit_plana_path(plana) %></td>
+        <td><%= link_to 'Destroy', plana, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to 'New Plana', new_plana_path ,class: "btn btn-lg btn-default" %>
+<%= link_to "Back", root_url,class: "btn btn-lg btn-default"  %>

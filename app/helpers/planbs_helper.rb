@@ -1,0 +1,2 @@
+module PlanbsHelper
+end
