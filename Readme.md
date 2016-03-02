@@ -1,21 +1,21 @@
 ### Ruby on Rails Project
 
-###Instructions to run local
-- To run the application 
-- bundle install --without production
-- "rake db:clear" or /db/development.sqlite3
+###Instructions to run the project at local
+- To run the application
+- "bundle install --without production"
+- "rake db:clear" 
 - "rake db:migrate"
 - "rake db:seed" or "rake db:setup"
 - "rails server"
 
-###Demo
+###Online Demo
 https://guarded-wildwood-9999.herokuapp.com/
 
 
 ###How GetThat  works
 - Users can choose their 4 week work out plan from plan_a(easy) plan_b(midieum) and plan_c(hard) and a start date
 - Admin can edit the exercise database and edit the work out plan
-- If the user has a valid workout plan and a start date, a calendar will in the index so they can click in to the guide page
+- If the user has a valid workout plan and a start date, a calendar will in the index so they can click into the guide page
 
 ###Integration Test
 * Admin account: email => "admin@admin.com", password => "ohioadmin"
