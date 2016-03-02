@@ -14,11 +14,11 @@ https://guarded-wildwood-9999.herokuapp.com/
 
 ###How GetThat  works
 - Users can choose their 4 week work out plan from plan_a(easy) plan_b(midieum) and plan_c(hard) and a start date
-- Amdin can edit the exercise database and edit the work out plan
+- Admin can edit the exercise database and edit the work out plan
 - If the user has a valid workout plan and a start date, a calendar will in the index so they can click in to the guide page
 
 ###Integration Test
-* Amdin account: email => "admin@admin.com", password => "ohioadmin"
+* Admin account: email => "admin@admin.com", password => "ohioadmin"
   * In this account, you can edit the database so you can present the user different exercises
 
 
